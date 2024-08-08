@@ -1,0 +1,223 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.pomodoro-container, .task-manager {
+    text-align: center;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 600px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    max-height: calc(100vh - 40px); /* Ensure the container does not exceed the viewport height */
+}
+
+.pomodoro-container:hover, .task-manager:hover {
+    transform: scale(1.05);
+}
+
+.timer-display {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.settings {
+    margin-top: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.task-manager {
+    text-align: left;
+    position: relative;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 400px;
+    height: 600px;
+    max-height: calc(100vh - 40px); /* Ensure the container does not exceed the viewport height */
+}
+
+#message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    display: none;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#message-container.show {
+    display: block;
+    opacity: 1;
+}
+
+#message-container.hide {
+    opacity: 0;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h2 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.header button {
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.header button:active {
+    transform: translateY(0);
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+#task-input {
+    width: calc(100% - 42px); /* Adjust width to accommodate the button */
+    padding: 5px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+#add-task {
+    padding: 5px 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#add-task:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+#add-task:active {
+    transform: translateY(0);
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    max-height: calc(100% - 130px); /* Adjust based on other elements' height */
+    overflow-y: auto;
+}
+
+#task-list li {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#task-list li button {
+    background-color: #fdd835;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#task-list li button:hover {
+    background-color: #fbc02d;
+    transform: translateY(-2px);
+}
+
+#task-list li button:active {
+    transform: translateY(0);
+}
